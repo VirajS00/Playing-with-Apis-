@@ -1,0 +1,241 @@
+:root {
+	--bg-color: rgb(0, 97, 166);
+}
+.square {
+	height: 150px;
+	width: 150px;
+	background-color: var(--bg-color);
+}
+
+.rect {
+	height: 150px;
+	width: 250px;
+	background-color: var(--bg-color);
+}
+
+.circle {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	background-color: var(--bg-color);
+}
+
+.oval {
+	height: 150px;
+	width: 250px;
+	border-radius: 50%;
+	background-color: var(--bg-color);
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 150px solid var(--bg-color);
+}
+
+.trap {
+	width: 100px;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 150px solid var(--bg-color);
+}
+
+.parallelogram {
+	height: 150px;
+	width: 250px;
+	transform: skew(-20deg);
+	background-color: var(--bg-color);
+}
+
+.star {
+	margin: 50px 0;
+	position: relative;
+	display: block;
+	color: var(--bg-color);
+	width: 0px;
+	height: 0px;
+	border-right: 100px solid transparent;
+	border-bottom: 70px solid var(--bg-color);
+	border-left: 100px solid transparent;
+	transform: rotate(35deg);
+}
+
+.star:before {
+	border-bottom: 80px solid var(--bg-color);
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	position: absolute;
+	height: 0;
+	width: 0;
+	top: -45px;
+	left: -65px;
+	display: block;
+	content: '';
+	transform: rotate(-35deg);
+}
+.star:after {
+	position: absolute;
+	display: block;
+	color: var(--bg-color);
+	top: 3px;
+	left: -105px;
+	width: 0px;
+	height: 0px;
+	border-right: 100px solid transparent;
+	border-bottom: 70px solid var(--bg-color);
+	border-left: 100px solid transparent;
+	transform: rotate(-70deg);
+	content: '';
+}
+
+.pentagon {
+	position: relative;
+	width: 108px;
+	box-sizing: content-box;
+	border-width: 100px 36px 0;
+	border-style: solid;
+	border-color: var(--bg-color) transparent;
+}
+.pentagon::before {
+	content: "";
+	position: absolute;
+	height: 0;
+	width: 0;
+	top: -170px;
+	left: -35px;
+	border-width: 0 90px 70px;
+	border-style: solid;
+	border-color: transparent transparent var(--bg-color);
+}
+
+.hexagon {
+	position: relative;
+	width: 180px;
+	height: 78px;
+	box-sizing: content-box;
+	background-color: var(--bg-color);
+}
+.hexagon::before {
+	content: "";
+	position: absolute;
+	height: 0;
+	width: 0;
+	top: -70px;
+	left: 0px;
+	border-width: 0 90px 70px;
+	border-style: solid;
+	border-color: transparent transparent var(--bg-color);
+}
+
+.hexagon::after {
+	content: "";
+	position: absolute;
+	bottom: -69.5px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 90px solid transparent;
+	border-right: 90px solid transparent;
+	border-top: 70px solid var(--bg-color);
+}
+
+.octagon {
+	position: relative;
+	width: 180px;
+	height: 76px;
+	box-sizing: content-box;
+	background-color: var(--bg-color);
+}
+.octagon::before {
+	content: "";
+	position: absolute;
+	height: 0;
+	width: 80px;
+	top: -50px;
+	left: 0px;
+	border-width: 0 50px 50px;
+	border-style: solid;
+	border-color: transparent transparent var(--bg-color);
+}
+
+.octagon::after {
+	content: "";
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	width: 80px;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 50px solid var(--bg-color);
+}
+
+.heart {
+	position: relative;
+	width: 180px;
+	height: 140px;
+}
+
+.heart:before,
+.heart:after {
+	position: absolute;
+	content: "";
+	left: 100px;
+	top: 0;
+	width: 100px;
+	height: 150px;
+	background: var(--bg-color);
+	border-radius: 50px 50px 0 0;
+	transform: rotate(-45deg);
+	transform-origin: 0 100%;
+}
+.heart:after {
+	left: 0;
+	transform: rotate(45deg);
+	transform-origin: 100% 100%;
+}
+
+.diamond {
+	height: 0;
+	width: 80px;
+	border-right: 80px solid transparent;
+	border-left: 80px solid transparent;
+	border-top: 80px solid transparent;
+	border-bottom: 80px solid var(--bg-color);
+	position: relative;
+	top: -100px;
+}
+
+.diamond::after {
+	content: '';
+	height: 0;
+	width: 0;
+	border-right: 120px solid transparent;
+	border-left: 120px solid transparent;
+	border-top: 130px solid var(--bg-color);
+	border-bottom: 80px solid transparent;
+	position: absolute;
+	top: 80px;
+	left: -80px;
+}
+
+.egg {
+	display: block;
+	width: 160px;
+	height: 200px;
+	background-color: var(--bg-color);
+	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.cone {
+	height: 0;
+	width: 0;
+	border-top: 200px solid var(--bg-color);
+	border-right: 150px solid transparent;
+	border-left: 150px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-radius: 50%;
+}

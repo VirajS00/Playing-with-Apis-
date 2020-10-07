@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shapes.css">
+    <title>Word Game</title>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="container">
+            <h2 class="title" style="grid-column: span 2; text-align: center;">Playing with words <br><span style="font-size: 1rem; display: block;">Interact With the words below and see how they respond</span></h2>
+            <div class="formContainer">
+                <textarea id="textArea">Hey! I live in India and like eating apple pie. The weather is pretty good today. Its time for the telecast but before that lets play some music. My favourite colour is orange and I love you. I also love eating egg for breakfast.</textarea>
+                <br><br><input type="button" id="but" value="Update"><br><br>
+                <div id="output"></div>
+            </div>
+            <div class="formContainer1" id="content1">
+                <img src="loader.svg" alt="" id="loader">
+            </div>
+        </div>
+    </div>
+    <span class="watermark" style="position: absolute; bottom: 4px; right: 4px; pointer-events: fill;">
+        <a href="https://giphy.com" target="_blank" class="linkAPI"><img src="PoweredBy_200px-White_HorizText.png" height="15px" alt="" style="margin-bottom: -2px"></a> | <a href="https://openweathermap.org" target="_blank" class="linkAPI">Open Weather Map API</a> | <a href="https://genius.com" target="_blank" class="linkAPI">GeniusAPI</a> | <a href="https://newsapi.org" target="_blank" class="linkAPI">NewsAPI</a> | <a href="https://covid19api.com" target="_blank" class="linkAPI">covid19API</a>
+    </span>
+    <script src="functions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

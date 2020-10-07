@@ -1,0 +1,375 @@
+@font-face {
+	font-family: 'digital7';
+	src: url(digital_7/digital-7.ttf);
+	font-weight: normal;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.1em;
+}
+#textArea {
+	font-family: 'Montserrat', sans-serif;
+	font-size: .9em;
+	width: 430px;
+	height: 200px;
+	outline: none;
+	resize: none;
+	border-radius: .3em;
+	border: 1px solid #ccc;
+}
+#textArea:focus {
+	border-color: #7e7e7e;
+}
+.spanA {
+	cursor: pointer;
+}
+#but {
+	width: 440px;
+	border: 0;
+	background-color: #008dca;
+	padding: 10px;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	border-radius: .3em;
+	outline: none;
+}
+#but:hover {
+	background-color: #007bad;
+}
+.container {
+	display: grid;
+	grid-template-rows: 60px 500px;
+	grid-template-columns: 450px 450px;
+	place-items: center;
+	position: relative;
+}
+.grid-container {
+	display: grid;
+	height: 100vh;
+	width: 100vw;
+	place-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.formContainer {
+	width: 450px;
+	min-height: 500px;
+	height: auto;
+	box-shadow: 0 4px 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.formContainer1 {
+	width: 450px;
+	min-height: 500px;
+	height: auto;
+	box-shadow: 0 4px 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.wordHover {
+	display: inline-block;
+	border-radius: .3em;
+	box-shadow: 0 0 4px;
+	background-color: #fff;
+	position: relative;
+	z-index: 4;
+}
+#output {
+	line-height: 25px;
+	position: relative;
+	width: 420px;
+	padding-bottom: 15px;
+}
+#loader {
+	display: none;
+}
+.weatherBox {
+	background-color: #00b1d6;
+	color: #fff;
+	height: 200px;
+	width: 400px;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	position: relative;
+}
+.temp {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 3em;
+	display: flex;
+}
+.condition {
+	position: absolute;
+	left: 75%;
+	top: 40px;
+	font-size: 1.3em;
+}
+.humidity {
+	position: absolute;
+	top: 85%;
+	left: 64%;
+}
+.imgC {
+	position: absolute;
+	left: 13px;
+	top: 72%;
+}
+
+.dateC {
+	font-family: 'Montserrat', sans-serif;
+	position: relative;
+	height: 120px;
+	width: 120px;
+	border: 1px solid #ccc;
+	border-radius: .3em;
+	display: flex;
+	justify-items: center;
+	align-items: center;
+}
+
+.day {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	text-align: center;
+}
+
+.month {
+	font-size: 1.1rem;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 70px;
+	width: 100%;
+	text-align: center;
+}
+
+.date {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 25px;
+}
+
+.day {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	background-color: tomato;
+	border-top-left-radius: .3em;
+	border-top-right-radius: .3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+
+.clock {
+	background-color: rgba(255, 255, 255, .1);
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+	position: relative;
+	box-shadow: 0 0 0 2px #4c4c4c, 0 0 0 3px #3b3b3b;
+}
+
+.clock .clockHand {
+	--rotation: 0;
+	position: absolute;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+	bottom: 50%;
+	left: 50%;
+	transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+	transform-origin: bottom;
+	z-index: 2;
+}
+
+.hourHand {
+	height: 25%;
+	width: 7px;
+	background-color: #fff;
+}
+
+.cicle {
+	content: '';
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	background-color: #fff;
+	z-index: 20;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%);
+	border-radius: 50%;
+}
+
+.minuteHand {
+	height: 40%;
+	width: 7px;
+	background-color: #fff;
+}
+
+.secondHand {
+	height: 45%;
+	width: 3px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	background-color: tomato;
+	z-index: 1;
+}
+
+.number {
+	--rotation: 0deg;
+	color: #848484;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transform: rotate(var(--rotation));
+}
+
+.clock .number1 {
+	--rotation: 30deg;
+}
+.clock .number2 {
+	--rotation: 60deg;
+}
+.clock .number3 {
+	--rotation: 90deg;
+}
+.clock .number4 {
+	--rotation: 120deg;
+}
+.clock .number5 {
+	--rotation: 150deg;
+}
+.clock .number6 {
+	--rotation: 180deg;
+}
+.clock .number7 {
+	--rotation: 210deg;
+}
+.clock .number8 {
+	--rotation: 240deg;
+}
+.clock .number9 {
+	--rotation: 270deg;
+}
+.clock .number10 {
+	--rotation: 300deg;
+}
+.clock .number11 {
+	--rotation: 330deg;
+}
+
+.digitalCl {
+	color: #fff;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 7px;
+	box-shadow: inset 0 0 0 1px #494949, inset 0 0 2px 1.5px #494949;
+	font-family: 'digital7', 'sarif';
+	width: 70px;
+	height: 22px;
+	font-size: 1.1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.covidData {
+	display: flex;
+	text-align: center;
+	padding-left: 20px;
+	flex-direction: column;
+	color: #0066bf;
+}
+
+.infoSpan {
+	font-size: .8rem;
+	display: block;
+	color: #000;
+}
+.songName {
+	text-align: center;
+	color: #272727;
+}
+.songHolder {
+	text-align: center;
+}
+
+.sArtist {
+	color: #a2a2a2;
+	font-size: .8rem;
+}
+
+.articles {
+	list-style: none;
+	width: 100%;
+}
+
+.newsItem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3px;
+}
+.newsImg {
+	padding-right: 10px;
+}
+
+.newsLink {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: #000;
+	width: 90%;
+	left: -20px;
+	height: 100%;
+	position: relative;
+	border: 1px solid #ccc;
+	transition: background-color .5s ease;
+}
+
+.newsLink:hover {
+	background-color: #ececec;
+}
+
+.titleNews {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	width: 87%;
+	background: url(b412122157.png) no-repeat left, #abdad0;
+	position: relative;
+	left: 4px;
+	height: 42px;
+	color: #002a22;
+}
+
+.linkAPI {
+	text-decoration: none;
+	color: #0070a3;
+}
+
+.linkAPI:hover {
+	text-decoration: underline;
+}
