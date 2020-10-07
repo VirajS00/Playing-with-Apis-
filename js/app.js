@@ -141,7 +141,7 @@ const changeContent = async () => {
 					let queryData = new FormData();
 					queryData.append('query', w);
 					document.getElementById('loader').style.display = 'flex';
-					fetch('giphy.php', {
+					fetch('php/giphy.php', {
 						method : 'post',
 						body   : queryData
 					})

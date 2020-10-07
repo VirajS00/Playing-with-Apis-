@@ -163,7 +163,7 @@ const paintClock = (content1) => {
 
 const generateSong = (el) => {
 	document.getElementById('loader').style.display = 'flex';
-	fetch('song.php', {
+	fetch('php/song.php', {
 		method : 'post'
 	})
 		.then((response) => response.json())
@@ -201,7 +201,7 @@ const generateNews = (el) => {
 	const data = new FormData();
 	data.append('update', 1);
 	document.getElementById('loader').style.display = 'flex';
-	fetch('news.php', {
+	fetch('php/news.php', {
 		method : 'post',
 		body   : data
 	})
@@ -245,7 +245,7 @@ const getWeather = async () => {
 	fd.append('lat', lat);
 	fd.append('lon', lon);
 
-	let req = await fetch('weather.php', {
+	let req = await fetch('php/weather.php', {
 		method : 'post',
 		body   : fd
 	});
