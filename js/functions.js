@@ -9,7 +9,7 @@ const textColor = (rgb) => {
 };
 
 const GetFruits = async () => {
-	const res = await fetch('fruits.json');
+	const res = await fetch('js/fruits.json');
 	const json = await res.json();
 	return json;
 };
@@ -21,7 +21,7 @@ const getCovidInfo = async (el, word) => {
 	const data = await fetch('https://api.covid19api.com/summary');
 	const json = await data.json();
 	const w = word.toUpperCase();
-	const countryResp = await fetch('countries.json');
+	const countryResp = await fetch('js/countries.json');
 	const countries = await countryResp.json();
 	let totalCases;
 	let totalDeaths;
@@ -33,8 +33,8 @@ const getCovidInfo = async (el, word) => {
 		totalDeaths = json.Global.TotalDeaths;
 		totalRec = json.Global.TotalRecovered;
 		head = 'Covid-19 - Global 🌏';
-	} else if (countries.some((item) => item.name.toUpperCase() == w)) {
-		let index = json.Countries.findIndex((a) => a.Slug == word.toLowerCase());
+	} else if (countries.some((item) => item.name.toUpperCase() == w) || countries.some((item) => item.name.toUpperCase().includes(w.toUpperCase()))) {
+		let index = json.Countries.findIndex((a) => a.Slug == word.toLowerCase() || a.Country.toLowerCase().includes(word.toLowerCase()));
 		totalCases = json.Countries[index].TotalConfirmed;
 		totalDeaths = json.Countries[index].TotalDeaths;
 		totalRec = json.Countries[index].TotalRecovered;

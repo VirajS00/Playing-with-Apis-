@@ -41,7 +41,7 @@ const changeContent = async () => {
 	];
 	const music = [ 'MUSIC', 'SONG', 'ARTIST', 'PLAYLIST' ];
 	const newsTerms = [ 'NEWS', 'NEWSPAPER', 'HEADLINE', 'TELECAST', 'HEADLINES', 'BROADCAST', 'LIVE' ];
-	const countryResp = await fetch('countries.json');
+	const countryResp = await fetch('js/countries.json');
 	const countries = await countryResp.json();
 	let jsondata = await GetFruits();
 	let keyvalue;
@@ -130,7 +130,7 @@ const changeContent = async () => {
 					w.toUpperCase() == 'COVID19' ||
 					w.toUpperCase() == 'CORONAVIRUS' ||
 					w.toUpperCase() == 'CARONA' ||
-					countries.some((item) => item.name.toUpperCase() == w.toUpperCase())
+					countries.some((item) => item.name.toUpperCase() == w.toUpperCase() || countries.some((item) => item.name.toUpperCase().includes(w.toUpperCase())))
 				) {
 					getCovidInfo(content1, w);
 				} else if (music.includes(w.toUpperCase())) {
